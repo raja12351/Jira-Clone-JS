@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira Clone</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Card section i.e. TO Do, Progress, Done -->
+    <section>
+        <div id="drag" draggable="true">
+            <div class="first">
+                <p class="category">To Do</p>
+                <p class="plus">+</p>
+            </div>
+            <div id="second" class="hide">
+                <input type="text" class="input" placeholder="Write here">
+                <button class="add">Add</button>
+            </div>
+            <!-- <div class="cards"> -->
+                <!-- <b>"content"</b>
+                <button onclick="deleteContent(this)">Delete</button> -->
+            <!-- </div>  -->
+        </div>
+        <div id="drop">
+            <div class="first">
+                <p class="category">Progress</p>
+                <p class="plus">+</p>
+            </div>
+            <div id="second" class="hide">
+                <input type="text" class="input" placeholder="Write here">
+                <button class="add">Add</button>
+            </div>
+            <!-- <div class="cards">
+                <b>"content"</b>
+                <button onclick="deleteContent(this)">Delete</button>
+            </div> -->
+        </div>
+        <div id="drop">
+            <div class="first">
+                <p class="category">Done</p>
+                <p class="plus">+</p>
+            </div>
+            <div id="second" class="hide">
+                <input type="text" class="input" placeholder="Write here">
+                <button class="add">Add</button>
+            </div>
+            <!-- <div class="cards">
+                <b>"content"</b>
+                <button onclick="deleteContent(this)">Delete</button>
+            </div> -->
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
