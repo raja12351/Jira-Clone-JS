@@ -1,5 +1,4 @@
 const dragEle = document.getElementById("drag");
-const dropEle = document.getElementById("drop");
 
 // dragEle.addEventListener("dragstart",()=>{
 //     console.log("Dragging start");
@@ -9,22 +8,8 @@ const dropEle = document.getElementById("drop");
 //     console.log("Dragging ends");
 // });
 
-// dropEle.addEventListener("dragenter" , ()=>{
-//     console.log("drag entered");
-// });
-
 // dropEle.addEventListener("dragleave" , ()=>{
 //     console.log("drag leaves");
-// });
-
-// dropEle.addEventListener("dragover",(event)=>{
-//     event.preventDefault();
-    // console.log("dragging over");
-// });
-
-// dropEle.addEventListener("drop" ,()=>{
-//     dropEle.appendChild(dragEle);
-    // console.log("dropped");
 // });
 
 const plus = document.getElementsByClassName("plus");
@@ -47,6 +32,11 @@ function deleteContent(buttonRef){
     const parent = buttonRef.parentNode;
     parent.remove();
 }
+function dragStart(event){
+    const cardId = event.target.id;
+    event.dataTransfer.setData("id",cardId);
+    console.log("dragging with id " + cardId);
+}
 
 function handleInput(event){
     const target = event.target.previousElementSibling;
@@ -58,6 +48,8 @@ function handleInput(event){
     container.className = "cards";
     container.id = idCount;
     container.draggable = "true";
+    container.addEventListener("dragstart",dragStart);
+
     container.innerHTML = `
         <b>${content}</b>
         <button class="deleteCard" onclick="deleteContent(this)">Delete</button> `;
@@ -70,4 +62,24 @@ function handleInput(event){
 
 for(let i=0;i<add.length;i++){
     add[i].addEventListener("click",handleInput);
+}
+
+// Drag and drop handling
+
+const dropContainer = document.getElementsByClassName("dropContainer");
+
+function dropEvents(event){
+    event.preventDefault();
+}
+function dropCards(event){
+    const cardId = event.dataTransfer.getData("id");
+
+    const element = document.getElementById(cardId);
+    event.target.appendChild(element);
+
+    console.log("dropped"); 
+}
+for(let i=0;i<dropContainer.length;i++){
+    dropContainer[i].addEventListener("dragover",dropEvents);
+    dropContainer[i].addEventListener("drop",dropCards);
 }
