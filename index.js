@@ -68,7 +68,7 @@ for(let i=0;i<add.length;i++){
 
 const dropContainer = document.getElementsByClassName("dropContainer");
 
-function dropEvents(event){
+function dragOverEvents(event){
     event.preventDefault();
 }
 function dropCards(event){
@@ -80,6 +80,6 @@ function dropCards(event){
     console.log("dropped"); 
 }
 for(let i=0;i<dropContainer.length;i++){
-    dropContainer[i].addEventListener("dragover",dropEvents);
+    dropContainer[i].addEventListener("dragover",dragOverEvents);
     dropContainer[i].addEventListener("drop",dropCards);
 }
