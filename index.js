@@ -42,7 +42,7 @@ function handleInput(event){
     const target = event.target.previousElementSibling;
     const content = target.value; //input value
     const parentSub = event.target.parentNode; //second
-    const parent = parentSub.parentNode; //drag or drop div
+    const parent = parentSub.parentNode; //drop div
 
     const container = document.createElement("div");
     container.className = "cards";

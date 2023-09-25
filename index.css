@@ -39,6 +39,7 @@
 .detailContainer{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-bottom: 20px;
     border-bottom: 1px solid gray;
     align-items: end;
@@ -66,6 +67,7 @@
 }
 .restLeft{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .searchBar{
@@ -211,4 +213,14 @@
 }
 .extra:hover{
     transform: scale(1.03);
+}
+
+@media screen and (max-width: 650px){
+    .left{
+        display: none;
+    }
+    .right{
+        border-left: none;
+        margin-left: 5px;
+    }
 }
