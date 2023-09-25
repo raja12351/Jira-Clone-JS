@@ -1,4 +1,4 @@
-const dragEle = document.getElementById("drag");
+// const dragEle = document.getElementById("drag");
 
 // dragEle.addEventListener("dragstart",()=>{
 //     console.log("Dragging start");
@@ -83,3 +83,27 @@ for(let i=0;i<dropContainer.length;i++){
     dropContainer[i].addEventListener("dragover",dragOverEvents);
     dropContainer[i].addEventListener("drop",dropCards);
 }
+
+// implementing extra blocks
+const extra = document.getElementById("extra");
+
+function addExtraBlock(event){
+    const previousChild = event.target; // extra button
+    const parent = event.target.parentNode; // card Container
+
+    const newCard = document.createElement("div");
+    newCard.id = "drop";
+    newCard.className = "dropContainer";
+    newCard.innerHTML = `
+    <div class="first">
+        <p class="category">Progress</p>
+        <p class="plus">+</p>
+    </div>
+    <div id="second" class="hide">
+        <input type="text" class="input" placeholder="Write here">
+        <button class="add">Add</button>
+    </div>`;
+
+    parent.insertBefore(newCard, previousChild);
+}
+extra.addEventListener("click",addExtraBlock);
