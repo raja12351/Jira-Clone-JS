@@ -41,10 +41,10 @@ for(let i=0;i<plus.length;i++){
 }
 
 const add = document.getElementsByClassName("add");
+let idCount = 1;
 
 function deleteContent(buttonRef){
     const parent = buttonRef.parentNode;
-
     parent.remove();
 }
 
@@ -52,10 +52,11 @@ function handleInput(event){
     const target = event.target.previousElementSibling;
     const content = target.value; //input value
     const parentSub = event.target.parentNode; //second
-    const parent = parentSub.parentNode; //drag or drop
+    const parent = parentSub.parentNode; //drag or drop div
 
     const container = document.createElement("div");
     container.className = "cards";
+    container.id = idCount;
     container.draggable = "true";
     container.innerHTML = `
         <b>${content}</b>
@@ -64,6 +65,7 @@ function handleInput(event){
     parent.appendChild(container);
     target.value = "";
     parentSub.className = "hide";
+    idCount++;
 }
 
 for(let i=0;i<add.length;i++){

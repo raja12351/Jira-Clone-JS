@@ -1,5 +1,6 @@
 section{
     display: flex;
+    flex-wrap: wrap;
 }
 #drag{
     height: 350px;
@@ -50,9 +51,21 @@ section{
 .category:hover{
     transform: scale(1.1);
 }
-.tarea{
-    display: flex;
-    margin-bottom: 10px;
+.add{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: orange;
+    border: none;
+    box-shadow: 1px 1px 2px gray;
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.add:hover{
+    transform: scale(1.01);
 }
 #second{
     display: flex;
@@ -62,6 +75,8 @@ section{
     width: 200px;
     height: 40px;
     border: none;
+    border-radius: 3px;
+    padding-left: 3px;
 }
 .hide{
     display: none !important;
@@ -76,9 +91,10 @@ section{
     padding: 10px 4px;
     margin: 5px 0px;
     box-shadow:1px 1px 2px gray ;
-    border-radius: 2px;
+    border-radius: 3px;
     transition: all 0.2s linear;
     cursor: pointer;
+    height: 30px;
 }
 .cards:hover{
     transform: scale(1.02);
