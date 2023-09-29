@@ -105,5 +105,14 @@ function addExtraBlock(event){
     </div>`;
 
     parent.insertBefore(newCard, previousChild);
+    
+    const newPlus = newCard.querySelector(".plus");
+    newPlus.addEventListener("click",createTask);
+
+    const newAdd = newCard.querySelector(".add");
+    newAdd.addEventListener("click",handleInput);
+
+    newCard.addEventListener("dragover", dragOverEvents);
+    newCard.addEventListener("drop", dropCards);
 }
 extra.addEventListener("click",addExtraBlock);
